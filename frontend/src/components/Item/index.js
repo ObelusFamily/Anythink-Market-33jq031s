@@ -3,7 +3,6 @@ import CommentContainer from "./CommentContainer";
 import React from "react";
 import { connect } from "react-redux";
 import marked from "marked";
-import Placeholder from '../../imgs/placeholder.png'
 import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
@@ -50,7 +49,7 @@ class Item extends React.Component {
             <div className="col-6">
               <img
                 src={
-                  this.props.item.image.length > 0 ? this.props.item.image : Placeholder
+                  this.props.item.image
                 }
                 alt={this.props.item.title}
                 className="item-img"

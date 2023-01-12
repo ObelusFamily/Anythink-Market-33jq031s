@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
+import Placeholder from '../imgs/placeholder.png'
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
 const mapDispatchToProps = (dispatch) => ({
@@ -28,6 +29,7 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
+  
 
   return (
     <div
@@ -37,7 +39,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={item.image=== "" ? Placeholder : item.image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
